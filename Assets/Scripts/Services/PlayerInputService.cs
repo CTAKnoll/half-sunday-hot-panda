@@ -7,6 +7,8 @@ using UnityEngine.InputSystem;
 public class PlayerInputService : MonoBehaviour, IService
 {
     public PlayerInput PlayerInput;
+    public InputActionReference PlayerMove;
+    public InputActionReference PlayerShoot;
 
     public void Awake()
     {
