@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,6 +19,7 @@ public class PlayerController : MonoBehaviour
         PlayerMoveUpDown.action.canceled += (_) => MoveVector.y = 0;
         PlayerMoveLeftRight.action.performed += (cxt) => MoveVector.x = cxt.ReadValue<Vector2>().x;
         PlayerMoveLeftRight.action.canceled += (_) => MoveVector.x = 0;
+        PlayerFire.action.performed += OnFire;
     }
 
     private void Update()
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
                 MoveVector.y * Time.deltaTime * DeltaSpeed));
     }
     
-    public void OnFire()
+    public void OnFire(InputAction.CallbackContext context)
     {
         Debug.Log("HI");
     }
