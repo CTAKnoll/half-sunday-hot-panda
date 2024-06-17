@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public InputActionReference PlayerMoveUpDown;
     public InputActionReference PlayerMoveLeftRight;
     public InputActionReference PlayerFire;
+    
+    
 
     private Vector2 MoveVector;
     
