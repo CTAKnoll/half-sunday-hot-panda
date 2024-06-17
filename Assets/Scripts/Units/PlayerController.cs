@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour, Damageable
     public float DeltaSpeed;
     public CharacterController Controller;
     public Weapon CurrentWeapon;
+    public GameObject ProjectileSource;
 
     public InputActionReference PlayerMoveUpDown;
     public InputActionReference PlayerMoveLeftRight;
@@ -22,7 +23,10 @@ public class PlayerController : MonoBehaviour, Damageable
     // Start is called before the first frame update
     private void Start()
     {
+        ServiceLocator.TryGetService(out TemplateServer);
+        
         Health = MaxHealth;
+        CurrentWeapon = new Weapon(TemplateServer.PistolTemplate);
         PlayerMoveUpDown.action.performed += (cxt) => MoveVector.y = cxt.ReadValue<Vector2>().y;
         PlayerMoveUpDown.action.canceled += (_) => MoveVector.y = 0;
         PlayerMoveLeftRight.action.performed += (cxt) => MoveVector.x = cxt.ReadValue<Vector2>().x;
@@ -37,7 +41,7 @@ public class PlayerController : MonoBehaviour, Damageable
             Controller.Move(new Vector3(MoveVector.x * Time.deltaTime * DeltaSpeed, 0, 
                 MoveVector.y * Time.deltaTime * DeltaSpeed));
         if(TryFire)
-            CurrentWeapon.TryFireWeapon(gameObject, GetTargetFromMouse());
+            CurrentWeapon.TryFireWeapon(ProjectileSource, GetTargetFromMouse());
     }
 
     public void AcquireWeapon(Weapon weapon)
@@ -60,7 +64,7 @@ public class PlayerController : MonoBehaviour, Damageable
         // project onto the XZ plane
         Vector3 projection = Vector3.ProjectOnPlane(hit.point, Vector3.up);
         // increase Y to meet the car
-        return new Vector3(projection.x, gameObject.transform.position.y, projection.z);
+        return new Vector3(projection.x, 0, projection.z);
     }
 
     void Damageable.Damage(int damage)

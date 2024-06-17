@@ -2,8 +2,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ProjectileTemplate : Template<Projectile> { }
-
 [RequireComponent(typeof(Collider))]
 public abstract class Projectile : MonoBehaviour
 {

@@ -6,11 +6,14 @@ namespace Services
     {
         public T Prefab;
 
-        public T Instantiate(GameObject parent = null)
+        public T Instantiate(GameObject parent)
         {
-            if(parent == null)
-                return GameObject.Instantiate(Prefab);
             return GameObject.Instantiate(Prefab, parent.transform);
+        }
+        
+        public T Instantiate(Vector3 position)
+        {
+            return GameObject.Instantiate(Prefab, position, Quaternion.identity);
         }
     }
 }

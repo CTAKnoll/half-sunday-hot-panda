@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [Serializable]
+[CreateAssetMenu(fileName = "WeaponData", menuName = "Weapons/WeaponData", order = 1)]
 public class WeaponData : ScriptableObject
 {
     public ProjectileTemplate ProjectileType;
@@ -30,7 +31,7 @@ public class Weapon
             return;
 
         LastFireTime = Time.time;
-        var projectile = Data.ProjectileType.Instantiate();
+        var projectile = Data.ProjectileType.Instantiate(source.transform.position);
         projectile.InitialDirection = (target - source.transform.position).normalized;
         CurrentAmmo--;
         if (CurrentAmmo == 0)
