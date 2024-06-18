@@ -16,7 +16,6 @@ public abstract class Projectile : MonoBehaviour
     public void OnEnable()
     {
         SpawnTime = Time.time;
-        Debug.Log("START");
     }
     
     public void Update()
@@ -24,7 +23,6 @@ public abstract class Projectile : MonoBehaviour
         Move();
         if (Time.time - SpawnTime >= Lifetime)
         {
-            Debug.Log("YAAAS");
             Destroy(gameObject);
         }
     }
