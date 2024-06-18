@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider))]
 public class Enemy : MonoBehaviour, Damageable
 {
     public int MaxHealth;
@@ -10,12 +12,7 @@ public class Enemy : MonoBehaviour, Damageable
     {
         Health = MaxHealth;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void Damage(int damage)
     {

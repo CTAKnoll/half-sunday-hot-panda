@@ -21,7 +21,7 @@ public abstract class Projectile : MonoBehaviour
         if (damageable != null)
         {
             damageable.Damage(Damage);
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 }
