@@ -72,6 +72,7 @@ public class PlayerController : MonoBehaviour, Damageable
         Health -= damage;
         if (Health <= 0)
         {
+            Destroy(gameObject);
             // You died loser lol get rekt
         }
     }
