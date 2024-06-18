@@ -38,8 +38,8 @@ public class PlayerController : MonoBehaviour, Damageable
     private void Update()
     {
         if(MoveVector != Vector2.zero)
-            Controller.Move(new Vector3(MoveVector.x * Time.deltaTime * DeltaSpeed, 0, 
-                MoveVector.y * Time.deltaTime * DeltaSpeed));
+            Controller.Move(Time.deltaTime * DeltaSpeed * new Vector3(MoveVector.x, 0, 
+                MoveVector.y).normalized);
         if(TryFire)
             CurrentWeapon.TryFireWeapon(ProjectileSource, GetTargetFromMouse());
     }
