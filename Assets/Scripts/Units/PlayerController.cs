@@ -64,6 +64,8 @@ public class PlayerController : MonoBehaviour, Damageable
         // project onto the XZ plane
         Vector3 projection = Vector3.ProjectOnPlane(hit.point, Vector3.up);
         // increase Y to meet the car
+        var go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        go.transform.position = new Vector3(projection.x, 0, projection.z);
         return new Vector3(projection.x, 0, projection.z);
     }
 
