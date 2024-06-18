@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1afe447fe0fe5824e8c9b69545ac36f4, type: 2}
+  - {fileID: 2100000, guid: 97d69699c1249ac4e975131c779bffad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 50
-  ScrollImage: {fileID: 2800000, guid: e81f8595f3eaf134fae5c83534ae62a5, type: 3}
+  ScrollImage: {fileID: 2800000, guid: e70f63bbf3f7e0640ab66ae98385afc6, type: 3}
 --- !u!1 &610581496135524277
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +161,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1afe447fe0fe5824e8c9b69545ac36f4, type: 2}
+  - {fileID: 2100000, guid: 096554abb98ef744c91b9d163490ec0f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 30
-  ScrollImage: {fileID: 2800000, guid: 2c3023c4645fb5a438ab9ef49d5ebbda, type: 3}
+  ScrollImage: {fileID: 2800000, guid: ec537a4a0b3859d47b0a298c902ee59c, type: 3}
 --- !u!1 &610581496902774707
 GameObject:
   m_ObjectHideFlags: 0
