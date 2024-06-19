@@ -6,18 +6,33 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public List<EnemySubstage> Substages;
+
+    private void Start()
+    {
+        Substages[0].SpawnAll();
+    }
+
 }
 
 [Serializable]
 public struct EnemySubstage
 {
     public List<EnemySpawn> Spawns;
+
+    public void SpawnAll()
+    {
+        foreach(EnemySpawn s in Spawns)
+        {
+            var enemy = s.EnemyType.Instantiate(s.SpawnPoint.position);
+            enemy.FollowTarget = s.DestinationPoint;
+        }
+    }
 }
 
 [Serializable]
 public struct EnemySpawn
 {
     public EnemyTemplate EnemyType;
-    public Vector3 SpawnPoint;
-    public Vector3 DestinationPoint;
+    public Transform SpawnPoint;
+    public Transform DestinationPoint;
 }
