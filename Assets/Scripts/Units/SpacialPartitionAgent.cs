@@ -9,6 +9,7 @@ public class SpacialPartitionAgent : MonoBehaviour
     public Vector3Int Partition => _partition;
 
     private static SpacialManager Manager;
+    public static SpacialManager spacialManager => Manager;
 
     private void Start()
     {
