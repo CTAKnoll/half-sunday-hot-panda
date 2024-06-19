@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   ProjectileType: {fileID: 11400000, guid: 01815456a0a7f9842aa90c764cf46599, type: 2}
-  MaxAmmo: 12
-  RateOfFire: 3
+  MaxAmmo: 10
+  RateOfFire: 2

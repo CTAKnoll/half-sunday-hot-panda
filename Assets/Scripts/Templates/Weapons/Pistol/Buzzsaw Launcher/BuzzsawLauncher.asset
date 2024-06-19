@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BuzzsawLauncher
   m_EditorClassIdentifier: 
   ProjectileType: {fileID: 11400000, guid: a307f80e62b32de4885284504e696f18, type: 2}
-  MaxAmmo: 7
-  RateOfFire: 2
+  MaxAmmo: 5
+  RateOfFire: 1

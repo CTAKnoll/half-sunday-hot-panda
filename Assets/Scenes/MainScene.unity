@@ -488,6 +488,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2752775634175965057, guid: 68446b6fd057d304691ee7a59ccd53f1, type: 3}
+      propertyPath: MaxHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752775634175965057, guid: 68446b6fd057d304691ee7a59ccd53f1, type: 3}
       propertyPath: FollowTarget
       value: 
       objectReference: {fileID: 231293046}
@@ -612,6 +616,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1080955840}
     - target: {fileID: 6446776848015561430, guid: c6c9a3f6e27cef444a7de254f4e1ae47, type: 3}
+      propertyPath: MaxHealth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446776848015561430, guid: c6c9a3f6e27cef444a7de254f4e1ae47, type: 3}
       propertyPath: DeltaSpeed
       value: 3
       objectReference: {fileID: 0}
@@ -726,6 +734,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7548751137488520748, guid: 6a0525d874c14664f995c25fea5a66a7, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7548751137689378503, guid: 6a0525d874c14664f995c25fea5a66a7, type: 3}
+      propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8506501925704003914, guid: 6a0525d874c14664f995c25fea5a66a7, type: 3}
