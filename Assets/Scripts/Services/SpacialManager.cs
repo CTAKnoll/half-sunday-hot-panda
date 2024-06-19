@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace Services
 {
@@ -10,6 +11,7 @@ namespace Services
         public Grid SpacialGrid => _spacialGrid;
         public readonly Dictionary<Vector3Int, List<SpacialPartitionAgent>> _partitionDict = new();
 
+        public Tilemap PartitionTilemap;
         public readonly int XMax = 5;
         public readonly int YMax = 3;
 
@@ -19,6 +21,11 @@ namespace Services
         {
             _spacialGrid = GetComponent<Grid>();
             ServiceLocator.RegisterAsService(this);
+        }
+
+        public bool IsValidPartition(Vector3Int partition)
+        {
+            return PartitionTilemap.GetTile(partition) != null;
         }
 
         public Vector3 PartitionToWorld(Vector3Int partition)
@@ -31,8 +38,9 @@ namespace Services
             var cell = _spacialGrid.WorldToCell(obj.transform.position);
             cell.z = 0;
             
-            if(Mathf.Abs(cell.x) > XMax || Mathf.Abs(cell.y) > YMax)
+            if(!IsValidPartition(cell))
             {
+                Debug.LogWarning($"Object {obj} tried to move to invalid partition {cell}");
                 return INVALID_PARTITION;
             }
 
