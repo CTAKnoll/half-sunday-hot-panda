@@ -1,20 +1,24 @@
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 [Serializable]
 [CreateAssetMenu(fileName = "WeaponData", menuName = "Weapons/WeaponData", order = 1)]
-public class WeaponData : ScriptableObject
+public class WeaponData : ScriptableObject, Boxable
 {
     public ProjectileTemplate ProjectileType;
     public int MaxAmmo;
     public float RateOfFire;
+    
+    public void Unbox(PlayerController player)
+    {
+        player.AcquireWeapon(new Weapon(this));
+    }
 }
 
 public class Weapon
 {
-    public float CurrentAmmo;
     public WeaponData Data;
+    public float CurrentAmmo;
     public event Action OnWeaponEmpty;
 
     private float LastFireTime;
