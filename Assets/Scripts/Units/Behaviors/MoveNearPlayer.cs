@@ -13,7 +13,6 @@ namespace Behavior
         SpacialManager spacialManager;
 
         bool _foundPosition;
-        bool destinationReached = false;
 
         private readonly Vector3Int[] offsets = new Vector3Int[]
         {
@@ -36,7 +35,6 @@ namespace Behavior
 
         public override void Enter()
         {
-            nav.DestinationReached += OnDestinationReached;
             //Get the partition the player is in
             var playerPartition = spacialManager.PlayerPartition;
 
@@ -58,13 +56,7 @@ namespace Behavior
 
         public override void Exit()
         {
-            destinationReached = false;
-            nav.DestinationReached -= OnDestinationReached;
-        }
-
-        void OnDestinationReached()
-        {
-            destinationReached = true;
+            _foundPosition = false;
         }
 
         public override IUnitBehavior.Result Process(float deltaTime)

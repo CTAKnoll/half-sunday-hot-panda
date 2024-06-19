@@ -41,5 +41,11 @@ namespace Behavior
                 return IUnitBehavior.Result.INCOMPLETE;
             }
         }
+
+        public override void Exit()
+        {
+            base.Exit();
+            _elapsed = 0;
+        }
     }
 }

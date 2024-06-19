@@ -29,7 +29,7 @@ public class Box : MonoBehaviour
     public void Update()
     {
         // YO MAGIC NUMBER POG
-        Debug.Log(RoadVector);
+        //Debug.Log(RoadVector);
         transform.position += RoadVector * RoadScrollSpeed * Time.deltaTime * 0.01f;
     }
 }

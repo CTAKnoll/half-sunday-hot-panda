@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e66266769f7a61442895c666a0c20b82, type: 3}
-  m_Name: New Move Near Player SO
+  m_Name: Move Near Player
   m_EditorClassIdentifier: 

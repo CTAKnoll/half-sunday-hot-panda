@@ -13,19 +13,19 @@ public class Enemy : MonoBehaviour, Damageable
     private void Awake()
     {
         nav = GetComponent<UnitNavigator>();
-        nav.DestinationReached += OnMoveDone;
+        //nav.DestinationReached += OnMoveDone;
     }
 
     // Start is called before the first frame update
     void Start()
     {
         Health = MaxHealth;
-        nav.SetDestination(FollowTarget.position);
+        //nav.SetDestination(FollowTarget.position);
     }
 
     public void OnMoveDone()
     {
-        nav.SetDestination(FollowTarget.position);
+        //nav.SetDestination(FollowTarget.position);
     }
 
 
