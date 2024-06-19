@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0645c7c3a6fc4a59bb07415db53afa7d, type: 3}
-  m_Name: Pistol
+  m_Name: Shotgun
   m_EditorClassIdentifier: 
-  ProjectileType: {fileID: 11400000, guid: 52751283b4995d446bfbbd67767b5221, type: 2}
-  MaxAmmo: 12
-  RateOfFire: 0.5
+  ProjectileType: {fileID: 11400000, guid: 01815456a0a7f9842aa90c764cf46599, type: 2}
+  MaxAmmo: 10
+  RateOfFire: 2

@@ -2,7 +2,7 @@ using Services;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour, Damageable
+public class PlayerController : MonoBehaviour, Damageable, IService
 {
     public int MaxHealth;
     public float DeltaSpeed;
@@ -19,6 +19,11 @@ public class PlayerController : MonoBehaviour, Damageable
     private Vector2 MoveVector;
 
     private TemplateServer TemplateServer;
+
+    private void Awake()
+    {
+        ServiceLocator.RegisterAsService(this);
+    }
     
     // Start is called before the first frame update
     private void Start()

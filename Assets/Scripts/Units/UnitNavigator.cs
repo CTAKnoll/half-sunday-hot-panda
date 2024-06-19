@@ -14,7 +14,7 @@ public class UnitNavigator : MonoBehaviour
     public AnimationCurve AnimCurve;
 
     public float MoveSpeed;
-
+    public bool IsMoving = true;
     public event Action DestinationReached;
 
     private void Awake()
@@ -27,7 +27,10 @@ public class UnitNavigator : MonoBehaviour
     {
         var moveDistance = Vector3.Distance(_destination, _startPosition);
         if (moveDistance <= float.Epsilon)
+        {
+            IsMoving = false;
             return;
+        }
 
         var motion = (MoveSpeed/moveDistance) * Time.deltaTime;
         _lerpPosition += motion;
@@ -38,21 +41,24 @@ public class UnitNavigator : MonoBehaviour
         {
             Stop();
             DestinationReached?.Invoke();
+            return;
         }
 
         _rb.MovePosition(movement);
     }
 
-    public void SetDestination(Vector3 destination)
+    public void SetDestination(Vector3 newDestination)
     {
+        IsMoving = !newDestination.Equals(transform.position);
         _lerpPosition = 0;
         _startPosition = transform.position;
-        _destination = destination;
+        _destination = newDestination;
     }
 
     public void Stop()
     {
+        SetDestination(transform.position);
+        IsMoving = false;
         _lerpPosition = 0;
-        _destination = transform.position;
     }
 }
