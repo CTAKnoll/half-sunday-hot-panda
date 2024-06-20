@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d329ebd3e3b56f348a4772821a3e48d9, type: 3}
-  m_Name: Light Wait Time
+  m_Script: {fileID: 11500000, guid: eb140424167127a41bc848c3742e0003, type: 3}
+  m_Name: Short Weapon Burst
   m_EditorClassIdentifier: 
-  waitTime: 1.5
+  triggerPullType: 1
+  triggerPullDuration: 0.5

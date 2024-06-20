@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class UnitNavigator : MonoBehaviour
 {
-    private CharacterController _charController;
+    private SpacialPartitionAgent _partitionAgent;
     private Rigidbody _rb;
     private Vector3 _destination;
     private Vector3 _startPosition;
@@ -14,12 +14,14 @@ public class UnitNavigator : MonoBehaviour
     public AnimationCurve AnimCurve;
 
     public float MoveSpeed;
-    public bool IsMoving = true;
+    [NonSerialized] public bool IsMoving = true;
+
+    public static readonly float AVOIDANCE_RADIUS = 0.9f;
     public event Action DestinationReached;
 
     private void Awake()
     {
-        _charController = GetComponent<CharacterController>();
+        _partitionAgent = GetComponent<SpacialPartitionAgent>();
         _rb = GetComponent<Rigidbody>();
     }
 
@@ -36,7 +38,7 @@ public class UnitNavigator : MonoBehaviour
         _lerpPosition += motion;
         var curveOutput = AnimCurve.Evaluate(_lerpPosition);
         var movement = Vector3.LerpUnclamped(_startPosition, _destination, curveOutput);
-        //_charController.Move(movement);
+        
         if (_lerpPosition >= 1)
         {
             Stop();

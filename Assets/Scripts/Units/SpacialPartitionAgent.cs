@@ -25,4 +25,9 @@ public class SpacialPartitionAgent : MonoBehaviour
         var newPartition = Manager.UpdatePartition(this);
         _partition = newPartition;
     }
+
+    public List<SpacialPartitionAgent> GetNeighbors()
+    {
+        return Manager.partitionDict[_partition];
+    }
 }

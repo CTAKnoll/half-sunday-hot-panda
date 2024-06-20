@@ -10,7 +10,7 @@ namespace Behavior
         public float waitTime;
         public override IUnitBehavior GetBehavior(GameObject parent)
         {
-            return new WaitForSeconds(waitTime);
+            return new WaitForSeconds(parent, waitTime);
         }
     }
 
@@ -18,12 +18,8 @@ namespace Behavior
     {
         public float waitTime;
         private float _elapsed;
-        public WaitForSeconds()
-        {
 
-        }
-
-        public WaitForSeconds(float time)
+        public WaitForSeconds(GameObject parent, float time) : base(parent)
         {
             waitTime = time;
         }

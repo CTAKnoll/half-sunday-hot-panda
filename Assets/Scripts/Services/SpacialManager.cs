@@ -9,7 +9,7 @@ namespace Services
     {
         private Grid _spacialGrid;
         public Grid SpacialGrid => _spacialGrid;
-        public readonly Dictionary<Vector3Int, List<SpacialPartitionAgent>> _partitionDict = new();
+        public readonly Dictionary<Vector3Int, List<SpacialPartitionAgent>> partitionDict = new();
         private Vector3Int _playerPartition;
         public Vector3Int PlayerPartition => _playerPartition;
 
@@ -46,24 +46,24 @@ namespace Services
                 return INVALID_PARTITION;
             }
 
-            if(!_partitionDict.ContainsKey(cell))
+            if(!partitionDict.ContainsKey(cell))
             {
-                _partitionDict.Add(cell, new List<SpacialPartitionAgent>() { obj });
+                partitionDict.Add(cell, new List<SpacialPartitionAgent>() { obj });
                 if (IsPlayer(obj))
                     _playerPartition = cell;
                 return cell;
             }
 
-            if (!_partitionDict[cell].Contains(obj)) {
+            if (!partitionDict[cell].Contains(obj)) {
                 //Try to remove this from its old partition
-                if(_partitionDict.TryGetValue(obj.Partition, out List<SpacialPartitionAgent> oldPartition))
+                if(partitionDict.TryGetValue(obj.Partition, out List<SpacialPartitionAgent> oldPartition))
                     oldPartition.Remove(obj);
 
                 //Add this agent to the newly calculated partition
                 if (IsPlayer(obj))
                     _playerPartition = cell;
 
-                _partitionDict[cell].Add(obj);
+                partitionDict[cell].Add(obj);
             }
             return cell;
         }

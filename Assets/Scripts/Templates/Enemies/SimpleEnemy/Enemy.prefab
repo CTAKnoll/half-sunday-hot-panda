@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f86c7164cdefe8347b683063d80b0b40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 30
+  MaxHealth: 10
   FollowTarget: {fileID: 0}
 --- !u!114 &4008692748298627256
 MonoBehaviour:
@@ -138,6 +138,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviors:
   - {fileID: 11400000, guid: 202695b5adcbc164ca2a3e214d56ea16, type: 2}
+  - {fileID: 11400000, guid: c9e3e74ba7e3c8c46ad50b359c9877ae, type: 2}
+  - {fileID: 11400000, guid: a62152be60d071d4093b64d86c4edf05, type: 2}
   - {fileID: 11400000, guid: c9e3e74ba7e3c8c46ad50b359c9877ae, type: 2}
 --- !u!114 &7665193086915354364
 MonoBehaviour:
@@ -185,7 +187,6 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   MoveSpeed: 1.5
-  IsMoving: 1
 --- !u!114 &8692616718550101749
 MonoBehaviour:
   m_ObjectHideFlags: 0

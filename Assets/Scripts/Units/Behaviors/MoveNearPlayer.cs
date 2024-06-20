@@ -22,11 +22,7 @@ namespace Behavior
             Vector3Int.right,
         };
 
-        public MoveNearPlayer()
-        {
-        }
-
-        public MoveNearPlayer(GameObject obj)
+        public MoveNearPlayer(GameObject obj) : base(obj)
         {
             nav = obj.GetComponent<UnitNavigator>();
             agent = obj.GetComponent<SpacialPartitionAgent>();

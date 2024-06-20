@@ -12,9 +12,9 @@ public abstract class BaseUnitBehavior : IUnitBehavior
 {
     protected GameObject Parent;
 
-    public BaseUnitBehavior()
+    public BaseUnitBehavior(GameObject parent)
     {
-
+        Parent = parent;
     }
 
     public void SetParent()

@@ -1,3 +1,4 @@
+using Services;
 using System;
 using UnityEngine;
 
@@ -10,24 +11,23 @@ public class Enemy : MonoBehaviour, Damageable
     private UnitNavigator nav;
     public Transform FollowTarget;
 
+    public Weapon Weapon;
+
     private void Awake()
     {
         nav = GetComponent<UnitNavigator>();
-        //nav.DestinationReached += OnMoveDone;
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        Health = MaxHealth;
-        //nav.SetDestination(FollowTarget.position);
+        if (ServiceLocator.TryGetService(out TemplateServer server))
+        {
+            Weapon = new Weapon(server.EnemySMG);
+        }
+       Health = MaxHealth;
     }
-
-    public void OnMoveDone()
-    {
-        //nav.SetDestination(FollowTarget.position);
-    }
-
 
     public void Damage(int damage)
     {
