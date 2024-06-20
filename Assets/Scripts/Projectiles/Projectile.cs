@@ -8,7 +8,10 @@ public abstract class Projectile : MonoBehaviour
     public int Damage;
     public float Lifetime;
     [NonSerialized] public Vector3 InitialDirection;
+    [NonSerialized] public GameObject Owner;
 
+    [Tooltip("What type of entity takes damage from this projectile")]
+    [SerializeField] private HurtboxMask HurtboxMask;
     private float SpawnTime;
 
     protected abstract void Move();
@@ -27,10 +30,33 @@ public abstract class Projectile : MonoBehaviour
         }
     }
 
+    protected virtual bool IsSelfDamage(Collider other)
+    {
+        if (other.gameObject.Equals(Owner))
+            return true;
+
+        for (int i = 0; i < other.gameObject.transform.childCount; i++)
+        {
+            var childObj = other.gameObject.transform.GetChild(i);
+
+            if(childObj.Equals(Owner)) return true;
+        }
+
+        return false;
+    }
+
+    protected bool CanHurt(Damageable damageable)
+    {
+        return HurtboxMask.HasFlag((HurtboxMask)damageable.HurtboxType);
+    }
+
     protected virtual void OnTriggerEnter(Collider other)
     {
+        if (IsSelfDamage(other))
+            return;
+
         var damageable = other.GetComponent<Damageable>();
-        if (damageable != null)
+        if (damageable != null && CanHurt(damageable))
         {
             damageable.Damage(Damage);
             Destroy(gameObject);

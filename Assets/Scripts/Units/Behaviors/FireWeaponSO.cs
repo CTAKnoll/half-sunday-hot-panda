@@ -31,6 +31,8 @@ namespace Behavior
         public TriggerPull triggerPullType;
         public float triggerPullDuration = 0.5f;
 
+        private Vector3 _approxPlayerPosition;
+
         float _elapsed = 0;
 
         SpacialManager spacialManager;
@@ -48,10 +50,10 @@ namespace Behavior
         {
             base.Enter();
 
-            var approxPlayerPosition = spacialManager.PartitionToWorld(spacialManager.PlayerPartition);
+            _approxPlayerPosition = spacialManager.PartitionToWorld(spacialManager.PlayerPartition);
 
             weapon = enemy.Weapon;
-            weapon.TryFireWeapon(Parent, approxPlayerPosition );
+            weapon.TryFireWeapon(Parent, _approxPlayerPosition );
 
         }
 
@@ -67,7 +69,10 @@ namespace Behavior
             if (_elapsed > triggerPullDuration)
                 return IUnitBehavior.Result.DONE;
             else
+            {
+                weapon.TryFireWeapon(Parent, _approxPlayerPosition);
                 return IUnitBehavior.Result.INCOMPLETE;
+            }
         }
 
         public override void Exit()

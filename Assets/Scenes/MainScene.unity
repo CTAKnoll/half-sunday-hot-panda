@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PistolTemplate: {fileID: 11400000, guid: b63098f69acaa4848a1aaa72925b31b3, type: 2}
-  EnemySMG: {fileID: 11400000, guid: 5079d7f9366c8ad44811655646ffeb4d, type: 2}
+  EnemySMG: {fileID: 11400000, guid: e5efceac6d59b1c4898030f6ceeae51b, type: 2}
 --- !u!4 &235233573
 Transform:
   m_ObjectHideFlags: 0

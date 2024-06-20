@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 10
   FollowTarget: {fileID: 0}
+  _hurtboxType: 2
 --- !u!114 &4008692748298627256
 MonoBehaviour:
   m_ObjectHideFlags: 0

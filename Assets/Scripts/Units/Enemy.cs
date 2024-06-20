@@ -13,6 +13,10 @@ public class Enemy : MonoBehaviour, Damageable
 
     public Weapon Weapon;
 
+    [SerializeField]
+    HurtboxType _hurtboxType;
+    public HurtboxType HurtboxType => _hurtboxType;
+
     private void Awake()
     {
         nav = GetComponent<UnitNavigator>();
@@ -24,7 +28,7 @@ public class Enemy : MonoBehaviour, Damageable
     {
         if (ServiceLocator.TryGetService(out TemplateServer server))
         {
-            Weapon = new Weapon(server.EnemySMG);
+            Weapon = new Weapon(server.EnemySMG, gameObject);
         }
        Health = MaxHealth;
     }

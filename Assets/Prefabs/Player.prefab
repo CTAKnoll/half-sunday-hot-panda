@@ -82,6 +82,7 @@ MonoBehaviour:
   MaxHealth: 500
   DeltaSpeed: 1
   Controller: {fileID: 5186723779024163961}
+  _hurtboxType: 1
   ProjectileSource: {fileID: 408851669572756447}
   PlayerMoveUpDown: {fileID: 0}
   PlayerMoveLeftRight: {fileID: 0}

@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour, Damageable, IService
     public int MaxHealth;
     public float DeltaSpeed;
     public CharacterController Controller;
+    [SerializeField] private HurtboxType _hurtboxType;
+    public HurtboxType HurtboxType => _hurtboxType;
+
     public Weapon CurrentWeapon;
     public GameObject ProjectileSource;
 
@@ -20,6 +23,7 @@ public class PlayerController : MonoBehaviour, Damageable, IService
 
     private TemplateServer TemplateServer;
 
+
     private void Awake()
     {
         ServiceLocator.RegisterAsService(this);
@@ -31,7 +35,7 @@ public class PlayerController : MonoBehaviour, Damageable, IService
         ServiceLocator.TryGetService(out TemplateServer);
         
         Health = MaxHealth;
-        CurrentWeapon = new Weapon(TemplateServer.PistolTemplate);
+        CurrentWeapon = new Weapon(TemplateServer.PistolTemplate, gameObject);
         PlayerMoveUpDown.action.performed += (cxt) => MoveVector.y = cxt.ReadValue<Vector2>().y;
         PlayerMoveUpDown.action.canceled += (_) => MoveVector.y = 0;
         PlayerMoveLeftRight.action.performed += (cxt) => MoveVector.x = cxt.ReadValue<Vector2>().x;
