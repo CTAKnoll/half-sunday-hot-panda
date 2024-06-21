@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Services;
 using UnityEngine;
 
 public class UnitNavigator : MonoBehaviour
@@ -15,13 +16,14 @@ public class UnitNavigator : MonoBehaviour
 
     public float MoveSpeed;
     [NonSerialized] public bool IsMoving = true;
-
-    public static readonly float AVOIDANCE_RADIUS = 0.9f;
     public event Action DestinationReached;
+
+    private SpacialManager SpacialManager;
 
     private void Awake()
     {
         _partitionAgent = GetComponent<SpacialPartitionAgent>();
+        ServiceLocator.TryGetService(out SpacialManager);
         _rb = GetComponent<Rigidbody>();
     }
 
@@ -49,17 +51,19 @@ public class UnitNavigator : MonoBehaviour
         _rb.MovePosition(movement);
     }
 
-    public void SetDestination(Vector3 newDestination)
+    public void SetDestination(Vector3Int newDestination)
     {
-        IsMoving = !newDestination.Equals(transform.position);
+        Vector3 worldPosition = SpacialManager.PartitionToWorld(newDestination);
+        SpacialManager.UpdateDestinationPartition(_partitionAgent, newDestination);
+        
+        IsMoving = !worldPosition.Equals(transform.position);
         _lerpPosition = 0;
         _startPosition = transform.position;
-        _destination = newDestination;
+        _destination = worldPosition;
     }
 
     public void Stop()
     {
-        SetDestination(transform.position);
         IsMoving = false;
         _lerpPosition = 0;
     }

@@ -2,6 +2,7 @@ using Services;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
 namespace Behavior
 {
@@ -34,20 +35,12 @@ namespace Behavior
             //Get the partition the player is in
             var playerPartition = spacialManager.PlayerPartition;
 
-            Vector3Int chosenPartition = Vector3Int.zero;
-            //Check area around it for valid partitions
-            foreach(var offset in offsets)
-            {
-                var partToCheck = playerPartition + offset;
-                if(spacialManager.IsValidPartition(partToCheck))
-                {
-                    chosenPartition = partToCheck;
-                    _foundPosition = true;
-                    break;
-                }    
-            }
+            // try to target a partition in a random direction adjacent to the player
+            int index = (int) FloatExtensions.RandomBetween(0, offsets.Length);
+            Vector3Int targetDirection = offsets[index];
+            Vector3Int targetPartition = spacialManager.TryGetFreePartition(playerPartition + targetDirection);
 
-            nav.SetDestination(spacialManager.PartitionToWorld(chosenPartition));
+            nav.SetDestination(targetPartition);
        }
 
         public override void Exit()
