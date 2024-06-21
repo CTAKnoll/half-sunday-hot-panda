@@ -13,7 +13,7 @@ namespace Services
         
         public T Instantiate(Vector3 position)
         {
-            return GameObject.Instantiate(Prefab, position, Quaternion.identity);
+            return GameObject.Instantiate(Prefab, position, Prefab.transform.rotation);
         }
     }
 }
