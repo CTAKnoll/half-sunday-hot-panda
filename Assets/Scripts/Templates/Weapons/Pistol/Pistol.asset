@@ -15,3 +15,5 @@ MonoBehaviour:
   ProjectileType: {fileID: 11400000, guid: 52751283b4995d446bfbbd67767b5221, type: 2}
   MaxAmmo: 0
   RateOfFire: 3
+  FireSounds:
+  - {fileID: 8300000, guid: 31961429f1bc2714280555cdb806e4d9, type: 3}

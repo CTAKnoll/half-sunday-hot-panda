@@ -1,3 +1,4 @@
+using Services;
 using System;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ public class WeaponData : ScriptableObject, Boxable
     public ProjectileTemplate ProjectileType;
     public int MaxAmmo;
     public float RateOfFire;
+
+    public AudioClip[] FireSounds;
 
     public void Unbox(PlayerController player)
     {
@@ -23,11 +26,14 @@ public class Weapon
 
     public GameObject Owner;
     private float LastFireTime;
+    private int _lastFireSound;
 
+    private AudioService _audio;
     public Weapon(WeaponData data)
     {
         Data = data;
         CurrentAmmo = Data.MaxAmmo;
+        ServiceLocator.TryGetService(out  _audio);
     }
 
     public Weapon(WeaponData data, GameObject owner) : this(data)
@@ -42,6 +48,7 @@ public class Weapon
 
         LastFireTime = Time.time;
         var projectile = Data.ProjectileType.Instantiate(source.transform.position);
+        PlayRandomFireSound();
         projectile.InitialDirection = (target - source.transform.position).normalized;
         projectile.Owner = this.Owner;
         CurrentAmmo--;
@@ -59,5 +66,13 @@ public class Weapon
     private bool CanFireWeapon()
     {
         return (Time.time - LastFireTime) >= (1 / Data.RateOfFire);
+    }
+
+    private void PlayRandomFireSound()
+    {
+        var rand = UnityEngine.Random.Range(0, Data.FireSounds.Length);
+        
+        _audio.PlaySound(Data.FireSounds[rand]);
+        _lastFireSound = rand;
     }
 }

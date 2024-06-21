@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0645c7c3a6fc4a59bb07415db53afa7d, type: 3}
-  m_Name: SMG
+  m_Script: {fileID: 11500000, guid: 63951de8ed1490e4ab2b3ab693b47314, type: 3}
+  m_Name: car_sfx
   m_EditorClassIdentifier: 
-  ProjectileType: {fileID: 11400000, guid: fbee54b250f3cee4aa4df34257ee4c41, type: 2}
-  MaxAmmo: 60
-  RateOfFire: 10
-  FireSounds:
-  - {fileID: 8300000, guid: 53f2a646756f61046a52924313a7843e, type: 3}
+  _audioClips: []
