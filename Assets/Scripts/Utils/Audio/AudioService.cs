@@ -43,13 +43,13 @@ public class AudioService : MonoBehaviour, IService
 
         if(bank == null )
         {
-            Debug.LogWarning($"Audio bank {bankName} not found");
+            Debug.LogWarning($"Audio bank \"{bankName}\" not found");
             return;
         }
 
         if(id >= bank.AudioClips.Length )
         {
-            Debug.LogError($"Clip {bankName}:{id} does not exist");
+            Debug.LogError($"Clip \"{bankName}:{id}\" does not exist");
             return;
         }
 

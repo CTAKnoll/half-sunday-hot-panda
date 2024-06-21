@@ -22,7 +22,13 @@ public class PlayerController : MonoBehaviour, Damageable, IService
     private Vector2 MoveVector;
 
     private TemplateServer TemplateServer;
+    private AudioService _audio;
 
+    [Header("Damage SFX IDs")]
+    [Min(0)]
+    public int damage_sfx = 0;
+    [Min(0)]
+    public int death_sfx = 1;
 
     private void Awake()
     {
@@ -33,6 +39,7 @@ public class PlayerController : MonoBehaviour, Damageable, IService
     private void Start()
     {
         ServiceLocator.TryGetService(out TemplateServer);
+        ServiceLocator.TryGetService(out _audio);
         
         Health = MaxHealth;
         CurrentWeapon = new Weapon(TemplateServer.PistolTemplate, gameObject);
@@ -81,8 +88,12 @@ public class PlayerController : MonoBehaviour, Damageable, IService
         Health -= damage;
         if (Health <= 0)
         {
+            _audio.PlaySound(Damageable.DAMAGE_SFX_BANK, death_sfx);
             Destroy(gameObject);
             // You died loser lol get rekt
+            return;
         }
+
+        _audio.PlaySound(Damageable.DAMAGE_SFX_BANK, damage_sfx);
     }
 }
