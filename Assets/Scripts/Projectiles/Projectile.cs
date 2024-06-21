@@ -32,17 +32,7 @@ public abstract class Projectile : MonoBehaviour
 
     protected virtual bool IsSelfDamage(Collider other)
     {
-        if (other.gameObject.Equals(Owner))
-            return true;
-
-        for (int i = 0; i < other.gameObject.transform.childCount; i++)
-        {
-            var childObj = other.gameObject.transform.GetChild(i);
-
-            if(childObj.Equals(Owner)) return true;
-        }
-
-        return false;
+        return other.transform.IsChildOf(Owner.transform);
     }
 
     protected bool CanHurt(Damageable damageable)
