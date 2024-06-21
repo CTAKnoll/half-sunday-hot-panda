@@ -65,6 +65,6 @@ public class UnitNavigator : MonoBehaviour
     public void Stop()
     {
         IsMoving = false;
-        _lerpPosition = 0;
+        _lerpPosition = 1;
     }
 }
