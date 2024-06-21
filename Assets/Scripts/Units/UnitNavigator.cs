@@ -53,6 +53,11 @@ public class UnitNavigator : MonoBehaviour
 
     public void SetDestination(Vector3Int newDestination)
     {
+        if (newDestination == SpacialManager.INVALID_PARTITION)
+        {
+            Debug.LogError("TRYING TO SET INVALID DESTINATION");
+            return;
+        }
         Vector3 worldPosition = SpacialManager.PartitionToWorld(newDestination);
         SpacialManager.UpdateDestinationPartition(_partitionAgent, newDestination);
         

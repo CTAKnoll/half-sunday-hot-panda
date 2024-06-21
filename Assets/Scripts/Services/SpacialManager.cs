@@ -48,7 +48,7 @@ namespace Services
             if (target == obj.Partition)
                 return target; // nothing to do;
 
-            if(!IsValidPartition(target))
+            if(!IsValidPartition(target) || IsOccupiedPartition(target))
             {
                 Debug.LogWarning($"Object {obj} tried to move to invalid partition {target}");
                 return INVALID_PARTITION;
@@ -56,7 +56,8 @@ namespace Services
             
             if (OccupiedPartitions.ContainsValue(obj))
             {
-                OccupiedPartitions.Remove(obj.Partition);
+                OccupiedPartitions.Remove(OccupiedPartitions.FirstOrDefault(
+                    kv => kv.Value == obj).Key);
             }
             
             //Add this agent to the newly calculated partition
@@ -89,9 +90,17 @@ namespace Services
         private bool CheckValidAndFree(Vector3Int cell, Queue<Vector3Int> queue)
         {
             if (!IsValidPartition(cell))
+            {
+                Debug.Log($"Tried to check invalid cell {cell}");
                 return false;
+            }
+
             if (!IsOccupiedPartition(cell))
+            {
                 return true;
+            }
+            
+            Debug.Log($"Tried to check occupied cell {cell}");
             queue.Enqueue(new Vector3Int(cell.x + 1, cell.y));
             queue.Enqueue(new Vector3Int(cell.x - 1, cell.y));
             queue.Enqueue(new Vector3Int(cell.x, cell.y + 1));

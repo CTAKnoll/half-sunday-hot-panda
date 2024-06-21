@@ -39,7 +39,7 @@ namespace Behavior
             int index = (int) FloatExtensions.RandomBetween(0, offsets.Length);
             Vector3Int targetDirection = offsets[index];
             Vector3Int targetPartition = spacialManager.TryGetFreePartition(playerPartition + targetDirection);
-
+            Debug.Log($"Agent: {agent.name}, Before: {playerPartition + targetDirection} After: {targetPartition}");
             nav.SetDestination(targetPartition);
        }
 
