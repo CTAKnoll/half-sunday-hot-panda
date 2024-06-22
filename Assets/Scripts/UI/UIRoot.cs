@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
 
-public class ScreenSpaceManager : MonoBehaviour, IService
+public class UIRoot : MonoBehaviour, IService
 {
     private Canvas _canvas;
     private Camera _mainCamera;
@@ -85,8 +85,13 @@ public class ScreenSpaceManager : MonoBehaviour, IService
         rectTransform.localPosition = fitRect.center;
     }
 
-    bool IsRectOnscreen(Rect canvasRect, Rect testRect)
+    public bool IsRectOnscreen(Rect canvasRect, Rect testRect)
     {
         return (canvasRect.Contains(testRect.min) && canvasRect.Contains(testRect.max));
+    }
+
+    public void InstantiateUIElement(GameObject prefab)
+    {
+        Instantiate(prefab, _canvas.transform);
     }
 }

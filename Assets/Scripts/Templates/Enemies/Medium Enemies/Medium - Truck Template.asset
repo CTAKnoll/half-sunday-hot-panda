@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Medium - Truck Template
   m_EditorClassIdentifier: 
   Prefab: {fileID: 2752775634175965057, guid: 592eedfe0536dae49bb193d4fec67731, type: 3}
+  warningPrefab: {fileID: 7564938483147873952, guid: 66275f400321cdd47a63388f70dbb1d8, type: 3}

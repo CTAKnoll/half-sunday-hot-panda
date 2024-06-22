@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Light - Car Template 1
   m_EditorClassIdentifier: 
   Prefab: {fileID: 2752775634175965057, guid: 050f48dd925fe0041a78c86a7ca1199d, type: 3}
+  warningPrefab: {fileID: 7564938483147873952, guid: 66275f400321cdd47a63388f70dbb1d8, type: 3}

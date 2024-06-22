@@ -373,6 +373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5044349395401cd469108aff2044fce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  centerGraphic: {fileID: 1998472056111452978}
+  direction: {fileID: 5035915328759282980}
 --- !u!222 &4546791329066199234
 CanvasRenderer:
   m_ObjectHideFlags: 0

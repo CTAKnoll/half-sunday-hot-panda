@@ -1,18 +1,34 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using Services;
 using Spawner;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    private static readonly string GENERAL_SFX_BANK = "general";
+    [Header("Game SFX")]
+    public int spawnWarning_sfx = 0;
+
+    [Header("Spawn Settings")]
     public List<EnemySubstage> Substages;
 
-    private List<GameObject> spawnedObjects;
+    private List<GameObject> spawnedObjects = new();
+
+    private UIRoot _uiRoot;
 
     private int _currentSubstage = 0;
+
+    private AudioService _audio;
+
     private void Start()
     {
-        spawnedObjects = new List<GameObject>(Substages[_currentSubstage].SpawnAll());
+        ServiceLocator.TryGetService(out _audio);
+        ServiceLocator.TryGetService(out _uiRoot);
+
+        _currentSubstage = -1;
+        NextSubstage();
     }
 
     private void Update()
@@ -44,6 +60,16 @@ public class EnemySpawner : MonoBehaviour
         spawnedObjects.Clear();
 
         _currentSubstage++;
+
+        StartCoroutine(nameof(WarnThenSpawn), _uiRoot);
+    }
+
+    IEnumerator WarnThenSpawn(UIRoot uiRoot)
+    {
+        Substages[_currentSubstage].SpawnWarnings(uiRoot);
+        _audio.PlaySound(GENERAL_SFX_BANK, spawnWarning_sfx);
+        yield return new WaitForSeconds(Substages[_currentSubstage].warningTime);
+
         spawnedObjects = new List<GameObject>(Substages[_currentSubstage].SpawnAll());
     }
 
@@ -63,6 +89,7 @@ public class EnemySpawner : MonoBehaviour
 [Serializable]
 public struct EnemySubstage
 {
+    public float warningTime;
     public List<EnemySpawn> Spawns;
 
     public GameObject[] SpawnAll()
@@ -76,6 +103,16 @@ public struct EnemySubstage
         }
 
         return spawnedObjects.ToArray();
+    }
+
+    public void SpawnWarnings(UIRoot uiRoot)
+    {
+        foreach(EnemySpawn s in Spawns)
+        {
+            var prefab = s.EnemyType.warningPrefab;
+            ScreenIndicator indicator = GameObject.Instantiate(prefab, s.SpawnPoint.position, uiRoot.transform.rotation, uiRoot.transform).GetComponent<ScreenIndicator>();
+            indicator.Target = s.SpawnPoint;
+        }
     }
 }
 
