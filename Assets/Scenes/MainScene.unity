@@ -236,14 +236,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8960911847668211383, guid: 5588de81e2e64484297d4c25929dd544, type: 3}
-      propertyPath: m_Volume
-      value: 0.696
-      objectReference: {fileID: 0}
-    - target: {fileID: 8960911847668211383, guid: 5588de81e2e64484297d4c25929dd544, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: a872a9f1903155744a936e3c7af51b6d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1089,6 +1081,10 @@ PrefabInstance:
     - target: {fileID: 7548751137689378503, guid: 6a0525d874c14664f995c25fea5a66a7, type: 3}
       propertyPath: m_ProvidesContacts
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144041294266673724, guid: 6a0525d874c14664f995c25fea5a66a7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8506501925704003914, guid: 6a0525d874c14664f995c25fea5a66a7, type: 3}
       propertyPath: m_Enabled

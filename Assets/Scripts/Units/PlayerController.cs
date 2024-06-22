@@ -30,6 +30,9 @@ public class PlayerController : MonoBehaviour, Damageable, IService
     [Min(0)]
     public int death_sfx = 1;
 
+    [Header("Engine Sounds")]
+    public AudioSourceTuner engineTuner;
+
     private void Awake()
     {
         ServiceLocator.RegisterAsService(this);
@@ -53,11 +56,19 @@ public class PlayerController : MonoBehaviour, Damageable, IService
 
     private void Update()
     {
+        var movement = Time.deltaTime * DeltaSpeed * new Vector3(MoveVector.x, 0, MoveVector.y).normalized;
+        var engineSetpoint = movement.x > 0 ? 1 : -1;
+
         if(MoveVector != Vector2.zero)
-            Controller.Move(Time.deltaTime * DeltaSpeed * new Vector3(MoveVector.x, 0, 
-                MoveVector.y).normalized);
+            Controller.Move(movement);
+        else
+            engineSetpoint = 0;
+
         if(TryFire)
             CurrentWeapon.TryFireWeapon(ProjectileSource, GetTargetFromMouse());
+
+
+        engineTuner.SetSetpoint(engineSetpoint);
     }
 
     public void AcquireWeapon(Weapon weapon)
