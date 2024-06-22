@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 684684e56ec14a86bfe1208be9b2c581, type: 3}
+  m_Name: Boss - Van Template
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 2752775634175965057, guid: 6ed153d8bd12d7d4ab503ecc984e6ef8, type: 3}
+  warningPrefab: {fileID: 7564938483147873952, guid: 66275f400321cdd47a63388f70dbb1d8, type: 3}
