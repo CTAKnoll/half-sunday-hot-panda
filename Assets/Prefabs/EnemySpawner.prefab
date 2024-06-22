@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7726881173868593197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8634777690122274724}
+  - component: {fileID: 6202677775260607061}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8634777690122274724
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7726881173868593197}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.59435797, y: -7.380228, z: 14.5228195}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6202677775260607061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7726881173868593197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0418c3b8996d47c29e7cfddee7a9289b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnWarning_sfx: 0
+  Substages:
+  - warningTime: 1
+    Spawns:
+    - EnemyType: {fileID: 11400000, guid: eccd038535dd2fd4a9a4178513c697ec, type: 2}
+      SpawnPoint: {fileID: 0}
+      DestinationPoint: {fileID: 0}
+    - EnemyType: {fileID: 11400000, guid: cad43791add137343a521978845083d0, type: 2}
+      SpawnPoint: {fileID: 0}
+      DestinationPoint: {fileID: 0}
+  - warningTime: 1
+    Spawns:
+    - EnemyType: {fileID: 11400000, guid: eccd038535dd2fd4a9a4178513c697ec, type: 2}
+      SpawnPoint: {fileID: 0}
+      DestinationPoint: {fileID: 0}
+    - EnemyType: {fileID: 11400000, guid: cad43791add137343a521978845083d0, type: 2}
+      SpawnPoint: {fileID: 0}
+      DestinationPoint: {fileID: 0}
+  - warningTime: 1
+    Spawns:
+    - EnemyType: {fileID: 11400000, guid: eccd038535dd2fd4a9a4178513c697ec, type: 2}
+      SpawnPoint: {fileID: 0}
+      DestinationPoint: {fileID: 0}
+    - EnemyType: {fileID: 11400000, guid: cad43791add137343a521978845083d0, type: 2}
+      SpawnPoint: {fileID: 0}
+      DestinationPoint: {fileID: 0}
+  - warningTime: 1
+    Spawns:
+    - EnemyType: {fileID: 11400000, guid: 341f90c4b428d4a4aa70bc0724f2310d, type: 2}
+      SpawnPoint: {fileID: 0}
+      DestinationPoint: {fileID: 0}
+    - EnemyType: {fileID: 11400000, guid: cad43791add137343a521978845083d0, type: 2}
+      SpawnPoint: {fileID: 0}
+      DestinationPoint: {fileID: 0}

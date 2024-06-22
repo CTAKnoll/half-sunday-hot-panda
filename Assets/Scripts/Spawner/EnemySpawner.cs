@@ -8,6 +8,8 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     private static readonly string GENERAL_SFX_BANK = "general";
+    private static readonly string SPAWN_SFX_BANK = "spawn_bark";
+
     [Header("Game SFX")]
     public int spawnWarning_sfx = 0;
 
@@ -71,6 +73,7 @@ public class EnemySpawner : MonoBehaviour
         yield return new WaitForSeconds(Substages[_currentSubstage].warningTime);
 
         spawnedObjects = new List<GameObject>(Substages[_currentSubstage].SpawnAll());
+        _audio.PlayRandomSound(SPAWN_SFX_BANK);
     }
 
     private bool AllEnemiesDestroyed()

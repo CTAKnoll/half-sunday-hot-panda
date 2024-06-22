@@ -16,6 +16,21 @@ public class AudioService : MonoBehaviour, IService
         ServiceLocator.RegisterAsService(this);
     }
 
+    private bool TryGetAudioBank(string bankName, out AudioBank audioBank)
+    {
+        audioBank = null;
+        //search for audio bank
+        var bank = banks.Find((bank) => bank.name.Equals(bankName));
+
+        if(bank != null)
+        {
+            audioBank = bank;
+            return true;
+        }
+
+        return false;
+    }
+
     public AudioClip GetClip(string bankName, int id)
     {
         //search for audio bank
@@ -27,44 +42,37 @@ public class AudioService : MonoBehaviour, IService
             return null;
         }
 
-        if(id >= bank.AudioClips.Length )
-        {
-            Debug.LogError($"Clip {bankName}:{id} does not exist");
-            return null;
-        }
 
-        return bank.AudioClips[id];
+        return bank.GetClip(id);
     }
 
     public void PlaySound(string bankName, int id)
     {
         //search for audio bank
-        var bank = banks.Find((bank) => bank.name.Equals(bankName));
-
-        if(bank == null )
+        if(!TryGetAudioBank(bankName, out AudioBank bank))
         {
             Debug.LogWarning($"Audio bank \"{bankName}\" not found");
             return;
         }
 
-        if(id >= bank.AudioClips.Length )
-        {
-            Debug.LogError($"Clip \"{bankName}:{id}\" does not exist");
-            return;
-        }
-
         //Play sound in audio source
-        var clip  = bank.AudioClips[id];
+        var clip  = bank.GetClip(id);
         _source.PlayOneShot(clip);
     }
 
-    public void PlaySound(AudioClip clip, float volume)
+    public void PlaySound(AudioClip clip, float volume = 1)
     {
         _source.PlayOneShot(clip, volume);
     }
 
-    public void PlaySound(AudioClip clip)
+    public void PlayRandomSound(string bankName)
     {
-        _source.PlayOneShot(clip);
+        if(!TryGetAudioBank(bankName, out AudioBank bank))
+        {
+            Debug.LogWarning($"Audio bank \"{bankName}\" not found");
+            return;
+        }
+
+        _source.PlayOneShot(bank.GetRandom());
     }
 }
