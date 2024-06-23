@@ -25,6 +25,7 @@ public class HealthBar : MonoBehaviour
     void Update()
     {
         Debug.Log($"{Player.Health} / {Player.MaxHealth}");
-        Renderer.SetFloat(PROP_ID_FILL, Mathf.Clamp01((float)Player.Health/Player.MaxHealth));
+        Debug.Log(Mathf.Clamp01((float)Player.Health/(float)Player.MaxHealth));
+        Renderer.SetFloat(PROP_ID_FILL, Mathf.Clamp01((float)Player.Health/(float)Player.MaxHealth));
     }
 }

@@ -46,11 +46,16 @@ public class Weapon
         if (!CanFireWeapon())
             return;
 
+        FireWeapon(source, target);
+    }
+
+    public void FireWeapon(GameObject source, Vector3 target)
+    {
         LastFireTime = Time.time;
         var projectile = Data.ProjectileType.Instantiate(source.transform.position);
         PlayRandomFireSound();
         projectile.InitialDirection = (target - source.transform.position).normalized;
-        projectile.Owner = this.Owner;
+        projectile.Owner = Owner;
         CurrentAmmo--;
         if (CurrentAmmo == 0)
             OnWeaponEmpty?.Invoke();

@@ -159,18 +159,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 627269353754647796}
     m_Modifications:
-    - target: {fileID: 4431135136451560633, guid: 25e44c1258c89914a833e9e22fd9dbf3, type: 3}
-      propertyPath: m_Type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4431135136451560633, guid: 25e44c1258c89914a833e9e22fd9dbf3, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 4431135136451560633, guid: 25e44c1258c89914a833e9e22fd9dbf3, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 2100000, guid: 26bc566fd6ca9da4ba9099c288a1da00, type: 2}
     - target: {fileID: 7746896282993280978, guid: 25e44c1258c89914a833e9e22fd9dbf3, type: 3}
       propertyPath: m_Name
       value: PlayerHealth
