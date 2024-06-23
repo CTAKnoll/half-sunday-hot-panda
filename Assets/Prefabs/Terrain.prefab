@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 248260501976792360}
   serializedVersion: 2
   m_LocalRotation: {x: 0.44811794, y: -0, z: -0, w: 0.8939745}
-  m_LocalPosition: {x: 20, y: 9.83, z: -3.84}
-  m_LocalScale: {x: 13, y: 1.55, z: 4}
+  m_LocalPosition: {x: 19.89, y: 9.83, z: -3.84}
+  m_LocalScale: {x: 10.285743, y: 1.65261, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 610581496902774704}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9267c1a693fdca24cb660a85b09a4d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 30
+  Speed: 0
   ScrollImage: {fileID: 2800000, guid: ec537a4a0b3859d47b0a298c902ee59c, type: 3}
 --- !u!1 &610581495262529378
 GameObject:
@@ -248,7 +248,7 @@ Transform:
   m_GameObject: {fileID: 610581496135524277}
   serializedVersion: 2
   m_LocalRotation: {x: 0.44811794, y: -0, z: -0, w: 0.8939745}
-  m_LocalPosition: {x: 20, y: 9.91, z: -3.9}
+  m_LocalPosition: {x: 20, y: 10.02, z: -3.91}
   m_LocalScale: {x: 13, y: 1.55, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -398,9 +398,9 @@ MonoBehaviour:
   - scrollingTexture: {fileID: 610581496135524238}
     parallaxFactor: 1
   - scrollingTexture: {fileID: 3172077291280384372}
-    parallaxFactor: 2
+    parallaxFactor: 1.5
   - scrollingTexture: {fileID: 4527118025015290361}
-    parallaxFactor: 0.2
+    parallaxFactor: 0.002
 --- !u!1 &1129601534688704147
 GameObject:
   m_ObjectHideFlags: 0
