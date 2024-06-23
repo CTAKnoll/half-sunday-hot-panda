@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy SMG
   m_EditorClassIdentifier: 
   ProjectileType: {fileID: 11400000, guid: 1b7946edd20b25149b0906079ef54d1d, type: 2}
-  MaxAmmo: 60
+  MaxAmmo: 0
   RateOfFire: 7
   FireSounds:
   - {fileID: 8300000, guid: 53f2a646756f61046a52924313a7843e, type: 3}
