@@ -21,7 +21,7 @@ public class WeaponData : ScriptableObject, Boxable
 public class Weapon
 {
     public WeaponData Data;
-    public float CurrentAmmo;
+    public int CurrentAmmo;
     public event Action OnWeaponEmpty;
 
     public GameObject Owner;

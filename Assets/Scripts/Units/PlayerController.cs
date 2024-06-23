@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour, Damageable, IService
     private TemplateServer TemplateServer;
     private AudioService _audio;
 
+    private IView<PlayerStatsModel> _view;
+    private PlayerStatsModel _uiModel;
+
     [Header("Damage SFX IDs")]
     [Min(0)]
     public int damage_sfx = 0;
@@ -44,6 +47,7 @@ public class PlayerController : MonoBehaviour, Damageable, IService
     {
         ServiceLocator.TryGetService(out TemplateServer);
         ServiceLocator.TryGetService(out _audio);
+        ServiceLocator.TryGetService(out _view);
         
         Health = MaxHealth;
         CurrentWeapon = new Weapon(TemplateServer.PistolTemplate, gameObject);
@@ -65,11 +69,24 @@ public class PlayerController : MonoBehaviour, Damageable, IService
         else
             engineSetpoint = 0;
 
-        if(TryFire)
+        if (TryFire)
+        {
             CurrentWeapon.TryFireWeapon(ProjectileSource, GetTargetFromMouse());
+        }
 
-
+        UpdateUIView();
         engineTuner.SetSetpoint(engineSetpoint);
+    }
+
+    private void UpdateUIView()
+    {
+        if (_view == null)
+            return;
+
+        _uiModel.AmmoCount = CurrentWeapon.CurrentAmmo;
+        _uiModel.MaxAmmo = CurrentWeapon.Data.MaxAmmo;
+        _uiModel.Health = Health;
+        _view.UpdateViewWithModel(_uiModel);
     }
 
     public void AcquireWeapon(Weapon weapon)
