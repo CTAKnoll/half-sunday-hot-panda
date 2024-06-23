@@ -1,4 +1,4 @@
-using Services;
+﻿using Services;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -15,6 +15,12 @@ public class PlayerStatsView : MonoBehaviour, IView<PlayerStatsModel>
     {
         healthSlider.value = Mathf.Clamp01(model.Health);
 
+        if(model.isInfinite)
+        {
+            currAmmoText.text = "∞";
+            maxAmmoText.text = "∞";
+            return;
+        }
         currAmmoText.text = model.AmmoCount.ToString();
         maxAmmoText.text = model.MaxAmmo.ToString();
     }
@@ -32,5 +38,5 @@ public struct PlayerStatsModel
     public int MaxAmmo;
 
     public Sprite Icon;
-    public bool isInfinite;
+    public bool isInfinite => MaxAmmo <= 0;
 }

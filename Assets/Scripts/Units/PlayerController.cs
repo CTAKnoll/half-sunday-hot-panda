@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour, Damageable, IService
 
         _uiModel.AmmoCount = CurrentWeapon.CurrentAmmo;
         _uiModel.MaxAmmo = CurrentWeapon.Data.MaxAmmo;
-        _uiModel.Health = Health;
+        _uiModel.Health = (float)Health/MaxHealth;
         _view.UpdateViewWithModel(_uiModel);
     }
 
