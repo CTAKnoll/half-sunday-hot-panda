@@ -14,6 +14,9 @@ public class ScrollingBackground : MonoBehaviour
     private int PROP_ID_MAIN_TEX;
     
     private MaterialPropertyBlock PropertyBlock;
+
+    private MeshRenderer _renderer;
+    private Vector2 xMaterialOffset;
     
     private void Start()
     {
@@ -21,8 +24,16 @@ public class ScrollingBackground : MonoBehaviour
         PROP_ID_MAIN_TEX = Shader.PropertyToID(PROP_NAME_MAIN_TEX);
         
         PropertyBlock = new MaterialPropertyBlock();
-        PropertyBlock.SetInt(PROP_ID_SCROLL_SPEED, Speed);
+        PropertyBlock.SetInt(PROP_ID_SCROLL_SPEED, 0);
         PropertyBlock.SetTexture(PROP_ID_MAIN_TEX, ScrollImage);
-        GetComponent<MeshRenderer>().SetPropertyBlock(PropertyBlock);
+        _renderer = GetComponent<MeshRenderer>();
+        //_renderer.SetPropertyBlock(PropertyBlock);
+    }
+
+    private void Update()
+    {
+        xMaterialOffset = _renderer.material.mainTextureOffset;
+        xMaterialOffset.x +=  Speed * (Time.deltaTime / 100);
+        _renderer.material.mainTextureOffset = xMaterialOffset;
     }
 }
