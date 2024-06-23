@@ -933,7 +933,7 @@ PrefabInstance:
       objectReference: {fileID: 1080955840}
     - target: {fileID: 6446776848015561430, guid: c6c9a3f6e27cef444a7de254f4e1ae47, type: 3}
       propertyPath: MaxHealth
-      value: 500
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6446776848015561430, guid: c6c9a3f6e27cef444a7de254f4e1ae47, type: 3}
       propertyPath: DeltaSpeed

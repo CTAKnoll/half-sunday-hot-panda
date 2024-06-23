@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour, Damageable
     private UnitNavigator nav;
     public Transform FollowTarget;
 
+    public WeaponData WeaponData;
     public Weapon Weapon;
 
     [SerializeField]
@@ -34,7 +35,7 @@ public class Enemy : MonoBehaviour, Damageable
     {
         if (ServiceLocator.TryGetService(out TemplateServer server))
         {
-            Weapon = new Weapon(server.EnemySMG, gameObject);
+            Weapon = new Weapon(WeaponData != null ? WeaponData : server.EnemySMG, gameObject);
         }
 
         ServiceLocator.TryGetService(out _audio);

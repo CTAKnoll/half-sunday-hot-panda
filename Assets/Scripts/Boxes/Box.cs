@@ -34,7 +34,7 @@ public class Box : MonoBehaviour
         ServiceLocator.TryGetService(out ObjectDictionary);
         ServiceLocator.TryGetService(out _audio);
         RoadScrollSpeed = ObjectDictionary.Road.Speed;
-        RoadVector = ObjectDictionary.Road.transform.right;
+        RoadVector = ObjectDictionary.Road.transform.right; 
     }
     
     public void Update()

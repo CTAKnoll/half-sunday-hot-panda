@@ -1,10 +1,12 @@
 using Services;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour, Damageable, IService
 {
     public int MaxHealth;
+    [DoNotSerialize] public int Health;
     public float DeltaSpeed;
     public CharacterController Controller;
     [SerializeField] private HurtboxType _hurtboxType;
@@ -18,7 +20,6 @@ public class PlayerController : MonoBehaviour, Damageable, IService
     public InputActionReference PlayerFire;
 
     private bool TryFire;
-    private int Health;
     private Vector2 MoveVector;
 
     private TemplateServer TemplateServer;
