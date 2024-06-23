@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159cf8e389814aaa96d126dc21bf17ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 4
+  Speed: 3
   Damage: 4
   Lifetime: 10
   HurtboxMask: 1
