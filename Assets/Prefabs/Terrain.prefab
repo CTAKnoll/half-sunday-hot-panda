@@ -349,6 +349,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 610581496902774704}
+  - component: {fileID: 5851935553284393579}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -380,6 +381,26 @@ Transform:
   - {fileID: 3444742770130210834}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5851935553284393579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610581496902774707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4db0f6c84dab3104b9bc3fcdb277b381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterSpeed: 50
+  parallaxPlanes:
+  - scrollingTexture: {fileID: 610581496135524238}
+    parallaxFactor: 1
+  - scrollingTexture: {fileID: 3172077291280384372}
+    parallaxFactor: 2
+  - scrollingTexture: {fileID: 4527118025015290361}
+    parallaxFactor: 0.2
 --- !u!1 &1129601534688704147
 GameObject:
   m_ObjectHideFlags: 0
