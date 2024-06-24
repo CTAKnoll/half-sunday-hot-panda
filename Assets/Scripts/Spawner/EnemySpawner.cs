@@ -10,6 +10,8 @@ public class EnemySpawner : MonoBehaviour
     private static readonly string GENERAL_SFX_BANK = "general";
     private static readonly string SPAWN_SFX_BANK = "spawn_bark";
 
+    public bool loop = true;
+
     [Header("Game SFX")]
     public int spawnWarning_sfx = 0;
 
@@ -55,8 +57,15 @@ public class EnemySpawner : MonoBehaviour
     {
         if (_currentSubstage >= Substages.Count - 1)
         {
-            Debug.Log("No more enemy stages to spawn");
-            return;
+            if (loop)
+            {
+                _currentSubstage = -1;
+            }
+            else
+            {
+                Debug.Log("No more enemy stages to spawn");
+                return;
+            }
         }
 
         spawnedObjects.Clear();
