@@ -46,7 +46,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnWarning_sfx: 0
   Substages:
-  - warningTime: 1
+  - warningTime: 2
+    Spawns:
+    - EnemyType: {fileID: 11400000, guid: eccd038535dd2fd4a9a4178513c697ec, type: 2}
+      SpawnPoint: {fileID: 0}
+      DestinationPoint: {fileID: 0}
+    - EnemyType: {fileID: 11400000, guid: eccd038535dd2fd4a9a4178513c697ec, type: 2}
+      SpawnPoint: {fileID: 0}
+      DestinationPoint: {fileID: 0}
+  - warningTime: 2
+    Spawns:
+    - EnemyType: {fileID: 11400000, guid: eccd038535dd2fd4a9a4178513c697ec, type: 2}
+      SpawnPoint: {fileID: 0}
+      DestinationPoint: {fileID: 0}
+    - EnemyType: {fileID: 11400000, guid: 341f90c4b428d4a4aa70bc0724f2310d, type: 2}
+      SpawnPoint: {fileID: 0}
+      DestinationPoint: {fileID: 0}
+    - EnemyType: {fileID: 11400000, guid: 341f90c4b428d4a4aa70bc0724f2310d, type: 2}
+      SpawnPoint: {fileID: 0}
+      DestinationPoint: {fileID: 0}
+    - EnemyType: {fileID: 11400000, guid: 341f90c4b428d4a4aa70bc0724f2310d, type: 2}
+      SpawnPoint: {fileID: 0}
+      DestinationPoint: {fileID: 0}
+  - warningTime: 2
     Spawns:
     - EnemyType: {fileID: 11400000, guid: eccd038535dd2fd4a9a4178513c697ec, type: 2}
       SpawnPoint: {fileID: 0}
@@ -54,20 +76,21 @@ MonoBehaviour:
     - EnemyType: {fileID: 11400000, guid: cad43791add137343a521978845083d0, type: 2}
       SpawnPoint: {fileID: 0}
       DestinationPoint: {fileID: 0}
-  - warningTime: 1
-    Spawns:
     - EnemyType: {fileID: 11400000, guid: eccd038535dd2fd4a9a4178513c697ec, type: 2}
+      SpawnPoint: {fileID: 0}
+      DestinationPoint: {fileID: 0}
+  - warningTime: 2
+    Spawns:
+    - EnemyType: {fileID: 11400000, guid: 341f90c4b428d4a4aa70bc0724f2310d, type: 2}
+      SpawnPoint: {fileID: 0}
+      DestinationPoint: {fileID: 0}
+    - EnemyType: {fileID: 11400000, guid: 341f90c4b428d4a4aa70bc0724f2310d, type: 2}
       SpawnPoint: {fileID: 0}
       DestinationPoint: {fileID: 0}
     - EnemyType: {fileID: 11400000, guid: cad43791add137343a521978845083d0, type: 2}
       SpawnPoint: {fileID: 0}
       DestinationPoint: {fileID: 0}
-  - warningTime: 1
-    Spawns:
     - EnemyType: {fileID: 11400000, guid: eccd038535dd2fd4a9a4178513c697ec, type: 2}
-      SpawnPoint: {fileID: 0}
-      DestinationPoint: {fileID: 0}
-    - EnemyType: {fileID: 11400000, guid: cad43791add137343a521978845083d0, type: 2}
       SpawnPoint: {fileID: 0}
       DestinationPoint: {fileID: 0}
   - warningTime: 1
@@ -75,6 +98,18 @@ MonoBehaviour:
     - EnemyType: {fileID: 11400000, guid: 341f90c4b428d4a4aa70bc0724f2310d, type: 2}
       SpawnPoint: {fileID: 0}
       DestinationPoint: {fileID: 0}
-    - EnemyType: {fileID: 11400000, guid: cad43791add137343a521978845083d0, type: 2}
+    - EnemyType: {fileID: 11400000, guid: eccd038535dd2fd4a9a4178513c697ec, type: 2}
+      SpawnPoint: {fileID: 0}
+      DestinationPoint: {fileID: 0}
+    - EnemyType: {fileID: 11400000, guid: eccd038535dd2fd4a9a4178513c697ec, type: 2}
+      SpawnPoint: {fileID: 0}
+      DestinationPoint: {fileID: 0}
+    - EnemyType: {fileID: 11400000, guid: 341f90c4b428d4a4aa70bc0724f2310d, type: 2}
+      SpawnPoint: {fileID: 0}
+      DestinationPoint: {fileID: 0}
+    - EnemyType: {fileID: 11400000, guid: 341f90c4b428d4a4aa70bc0724f2310d, type: 2}
+      SpawnPoint: {fileID: 0}
+      DestinationPoint: {fileID: 0}
+    - EnemyType: {fileID: 11400000, guid: 341f90c4b428d4a4aa70bc0724f2310d, type: 2}
       SpawnPoint: {fileID: 0}
       DestinationPoint: {fileID: 0}

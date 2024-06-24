@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Enemy_Shotgun
   m_EditorClassIdentifier: 
   ProjectileType: {fileID: 11400000, guid: 26ace7d20c4965a4a85db0bffe3ef2ab, type: 2}
-  MaxAmmo: 10
-  RateOfFire: 2
+  MaxAmmo: 0
+  RateOfFire: 3
   FireSounds:
   - {fileID: 8300000, guid: 31961429f1bc2714280555cdb806e4d9, type: 3}
   icon: {fileID: 0}
