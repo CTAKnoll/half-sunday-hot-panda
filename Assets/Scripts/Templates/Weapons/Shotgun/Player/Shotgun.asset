@@ -17,3 +17,4 @@ MonoBehaviour:
   RateOfFire: 2
   FireSounds:
   - {fileID: 8300000, guid: 31961429f1bc2714280555cdb806e4d9, type: 3}
+  icon: {fileID: 21300000, guid: 6847fce71636372499c1f9e7298c1d7b, type: 3}

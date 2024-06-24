@@ -11,9 +11,13 @@ public class PlayerStatsView : MonoBehaviour, IView<PlayerStatsModel>
     public TMP_Text currAmmoText;
     public TMP_Text maxAmmoText;
 
+
+    public Image weaponIcon;
+
     public void UpdateViewWithModel(PlayerStatsModel model)
     {
         healthSlider.value = Mathf.Clamp01(model.Health);
+        weaponIcon.sprite = model.Icon;
 
         if(model.isInfinite)
         {

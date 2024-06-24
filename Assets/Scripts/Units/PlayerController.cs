@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour, Damageable, IService
         if (_view == null)
             return;
 
+        _uiModel.Icon = CurrentWeapon.Data.icon;
         _uiModel.AmmoCount = CurrentWeapon.CurrentAmmo;
         _uiModel.MaxAmmo = CurrentWeapon.Data.MaxAmmo;
         _uiModel.Health = (float)Health/MaxHealth;

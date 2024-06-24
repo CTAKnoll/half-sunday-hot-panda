@@ -863,6 +863,7 @@ MonoBehaviour:
   healthSlider: {fileID: 4749829747215596348}
   currAmmoText: {fileID: 919523280864835483}
   maxAmmoText: {fileID: 8288330299639623590}
+  weaponIcon: {fileID: 5975820256212517484}
 --- !u!114 &24837198024363691
 MonoBehaviour:
   m_ObjectHideFlags: 0
