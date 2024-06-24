@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8f6fb583e714703b0a6eac166575d6e, type: 3}
   m_Name: Enemy_ShotgunBulletTemplate
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 2392169553751884221, guid: 25ecdc7f216cf984bb81f296568a5722, type: 3}
+  Prefab: {fileID: 2392169553751884221, guid: b0f5ad5875dcf804b890bf0863d968c6, type: 3}

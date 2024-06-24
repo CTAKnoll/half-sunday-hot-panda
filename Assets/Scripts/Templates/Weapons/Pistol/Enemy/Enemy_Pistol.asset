@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0645c7c3a6fc4a59bb07415db53afa7d, type: 3}
   m_Name: Enemy_Pistol
   m_EditorClassIdentifier: 
-  ProjectileType: {fileID: 11400000, guid: 52751283b4995d446bfbbd67767b5221, type: 2}
+  ProjectileType: {fileID: 11400000, guid: 4e135d041cd25a248bccd735396e7e37, type: 2}
   MaxAmmo: 0
   RateOfFire: 3
   FireSounds:
   - {fileID: 8300000, guid: 31961429f1bc2714280555cdb806e4d9, type: 3}
+  icon: {fileID: 0}
