@@ -124,7 +124,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 30
   FollowTarget: {fileID: 0}
+  WeaponData: {fileID: 11400000, guid: 60fe049aefe0cf84a924539630755840, type: 2}
   _hurtboxType: 2
+  damage_sfx: 3
+  death_sfx: 4
 --- !u!114 &4008692748298627256
 MonoBehaviour:
   m_ObjectHideFlags: 0

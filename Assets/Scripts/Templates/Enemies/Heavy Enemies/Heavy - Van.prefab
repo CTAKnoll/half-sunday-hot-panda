@@ -122,9 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f86c7164cdefe8347b683063d80b0b40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 50
+  MaxHealth: 40
   FollowTarget: {fileID: 0}
-  WeaponData: {fileID: 11400000, guid: e5efceac6d59b1c4898030f6ceeae51b, type: 2}
+  WeaponData: {fileID: 11400000, guid: 464c310b649fe5e43b9199c38cce2812, type: 2}
   _hurtboxType: 2
   damage_sfx: 3
   death_sfx: 4

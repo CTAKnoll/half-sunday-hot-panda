@@ -135,4 +135,4 @@ MonoBehaviour:
   Speed: 2
   Damage: 10
   Lifetime: 2
-  HurtboxMask: 2
+  HurtboxMask: 1
