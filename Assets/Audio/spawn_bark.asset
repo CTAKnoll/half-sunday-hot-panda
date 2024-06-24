@@ -16,10 +16,10 @@ MonoBehaviour:
   - {fileID: 0}
   probability: 0.646
   chanceClips:
-  - {fileID: 8300000, guid: 49943089e46f94b44aae6c1c8d15830a, type: 3}
-  - {fileID: 8300000, guid: 0cee1129681635245adf9cb3e05f381e, type: 3}
-  - {fileID: 8300000, guid: f974ff874e382624aaa674aa18323c68, type: 3}
-  - {fileID: 8300000, guid: a3a714597d58d9b46a078b1f4802e071, type: 3}
-  - {fileID: 8300000, guid: 848a6d3582c082c4e9e1a4f66754928a, type: 3}
-  - {fileID: 8300000, guid: ca50b84f52178e24fbad3fb1611a4f55, type: 3}
-  - {fileID: 8300000, guid: d3a36d54e0180994798a1947994a74c2, type: 3}
+  - {fileID: 8300000, guid: fdcbf944d6a1ba04187ac21f9b6100e8, type: 3}
+  - {fileID: 8300000, guid: 624db976a4188824fbc87ec13cab977a, type: 3}
+  - {fileID: 8300000, guid: 0870554511517a14abd8a2ab8ac6aec6, type: 3}
+  - {fileID: 8300000, guid: fcc0ed5320d1c3f41a90a8ad15ba0d51, type: 3}
+  - {fileID: 8300000, guid: 95fbabb47c620c04dbb8b0e020426881, type: 3}
+  - {fileID: 8300000, guid: fdcbf944d6a1ba04187ac21f9b6100e8, type: 3}
+  - {fileID: 8300000, guid: c69fffb7760360547b64052073303475, type: 3}
