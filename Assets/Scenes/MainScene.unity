@@ -672,6 +672,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 963194227}
+    - target: {fileID: 2824823796353956847, guid: c06b8d41f058eb14d88b81743fab4f96, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 197.90002
+      objectReference: {fileID: 0}
     - target: {fileID: 3334586625124285314, guid: c06b8d41f058eb14d88b81743fab4f96, type: 3}
       propertyPath: m_Name
       value: Main Canvas
@@ -1101,6 +1105,18 @@ PrefabInstance:
     - target: {fileID: 3619574383206043352, guid: 6a0525d874c14664f995c25fea5a66a7, type: 3}
       propertyPath: spawnInterval
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619574383206043352, guid: 6a0525d874c14664f995c25fea5a66a7, type: 3}
+      propertyPath: itemSpawns.Array.data[0].probability
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619574383206043352, guid: 6a0525d874c14664f995c25fea5a66a7, type: 3}
+      propertyPath: itemSpawns.Array.data[1].probability
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 3619574383206043352, guid: 6a0525d874c14664f995c25fea5a66a7, type: 3}
+      propertyPath: itemSpawns.Array.data[2].probability
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4090400663958831009, guid: 6a0525d874c14664f995c25fea5a66a7, type: 3}
       propertyPath: m_LocalPosition.z
