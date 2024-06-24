@@ -1047,6 +1047,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 814068821696884643}
     m_Modifications:
     - target: {fileID: 6202677775260607061, guid: 8cd8103d0214b5f4698ec7fd2a21e220, type: 3}
+      propertyPath: Substages.Array.data[4].warningTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202677775260607061, guid: 8cd8103d0214b5f4698ec7fd2a21e220, type: 3}
       propertyPath: Substages.Array.data[0].Spawns.Array.data[0].SpawnPoint
       value: 
       objectReference: {fileID: 4159395390665854016}

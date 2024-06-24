@@ -133,6 +133,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 3
-  Damage: 4
+  Damage: 2
   Lifetime: 10
   HurtboxMask: 1
