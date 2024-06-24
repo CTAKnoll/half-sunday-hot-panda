@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 75
-  ScrollImage: {fileID: 2800000, guid: e70f63bbf3f7e0640ab66ae98385afc6, type: 3}
+  ScrollImage: {fileID: 2800000, guid: bfaa978b959fa2a42b406b96edd8ef7c, type: 3}
 --- !u!1 &610581496135524277
 GameObject:
   m_ObjectHideFlags: 0
