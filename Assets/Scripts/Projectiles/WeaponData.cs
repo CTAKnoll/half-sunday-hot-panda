@@ -12,6 +12,8 @@ public class WeaponData : ScriptableObject, Boxable
 
     public AudioClip[] FireSounds;
 
+    public Sprite icon;
+
     public void Unbox(PlayerController player)
     {
         player.AcquireWeapon(new Weapon(this));
