@@ -12,8 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63951de8ed1490e4ab2b3ab693b47314, type: 3}
   m_Name: pickups
   m_EditorClassIdentifier: 
-  _audioClips:
-  - {fileID: 8300000, guid: 6907cd6c02fe03f48b9220b3a046b4dd, type: 3}
-  - {fileID: 8300000, guid: 14ad00909acc1ac4c89f05572d9c08b3, type: 3}
-  - {fileID: 8300000, guid: 8249f4ca4cdfe62499fcb634d86282c7, type: 3}
-  - {fileID: 8300000, guid: cfc2b6c901a2ab441a5782df26343acb, type: 3}
+  audioClips:
+  - {fileID: 8300000, guid: 8601633c69e112b4d87dc7d2238ab3f8, type: 3}
