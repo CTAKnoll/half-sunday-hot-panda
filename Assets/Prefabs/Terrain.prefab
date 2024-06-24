@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9267c1a693fdca24cb660a85b09a4d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 50
+  Speed: 75
   ScrollImage: {fileID: 2800000, guid: e70f63bbf3f7e0640ab66ae98385afc6, type: 3}
 --- !u!1 &610581496135524277
 GameObject:
@@ -393,12 +393,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4db0f6c84dab3104b9bc3fcdb277b381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masterSpeed: 50
+  masterSpeed: 70
   parallaxPlanes:
   - scrollingTexture: {fileID: 610581496135524238}
     parallaxFactor: 1
   - scrollingTexture: {fileID: 3172077291280384372}
-    parallaxFactor: 1.5
+    parallaxFactor: 0.8
   - scrollingTexture: {fileID: 4527118025015290361}
     parallaxFactor: 0.002
 --- !u!1 &1129601534688704147
