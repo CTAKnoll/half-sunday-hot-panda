@@ -15,6 +15,8 @@ namespace Behavior
 
         bool _foundPosition;
 
+        SpacialManager.Loan _loan;
+
         private readonly Vector3Int[] offsets = new Vector3Int[]
         {
             Vector3Int.up,
@@ -36,15 +38,25 @@ namespace Behavior
             var playerPartition = spacialManager.PlayerPartition;
 
             // try to target a partition in a random direction adjacent to the player
-            int index = (int) FloatExtensions.RandomBetween(0, offsets.Length);
-            Vector3Int targetDirection = offsets[index];
-            Vector3Int targetPartition = spacialManager.TryGetFreePartition(playerPartition + targetDirection);
-            Debug.Log($"Agent: {agent.name}, Before: {playerPartition + targetDirection} After: {targetPartition}");
+            var queue = new Queue<Vector3Int>(offsets);
+
+            while (queue.TryDequeue(out var offset))
+            {
+                if(spacialManager.TryBorrowPartition(offset + playerPartition, this, out SpacialManager.Loan loan))
+                {
+                    _foundPosition = true;
+                    _loan = loan;
+                    break;
+                }
+            }
+            Vector3Int targetPartition = _loan.loanedPartition;
+            Debug.Log($"Agent: {agent.name}, Before: {playerPartition} After: {targetPartition}");
             nav.SetDestination(targetPartition);
        }
 
         public override void Exit()
         {
+            _loan.Release?.Invoke();
             _foundPosition = false;
         }
 

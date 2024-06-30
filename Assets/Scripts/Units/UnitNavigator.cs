@@ -67,6 +67,11 @@ public class UnitNavigator : MonoBehaviour
         _destination = worldPosition;
     }
 
+    private void OnDisable()
+    {
+        SpacialManager.RemoveAgent(_partitionAgent);
+    }
+
     public void Stop()
     {
         IsMoving = false;

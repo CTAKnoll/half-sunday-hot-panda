@@ -42,6 +42,11 @@ public class BehaviorSequence : MonoBehaviour
         _currentState.Enter();
     }
 
+    private void OnDisable()
+    {
+        _currentState?.Exit();
+    }
+
     private void Update()
     {
         var result = _currentState.Process(Time.deltaTime);
